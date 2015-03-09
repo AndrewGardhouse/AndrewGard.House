@@ -80,3 +80,7 @@ body > footer > div.container > div > div.col.l4.offset-l2.s12 > ul > li {
 body > footer > div > div {
   margin-top: 5px !important;
 }
+
+#inner > div.row.center-align.hide-on-med-and-up {
+  margin-bottom: 0px;
+}
