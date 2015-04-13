@@ -1,6 +1,8 @@
 (function($){
   $(function(){
-    
+
+    $("#header-text").delay(2000).fadeIn(800);
+
     $('.parallax').parallax();
 
     var options = [
@@ -11,10 +13,7 @@
     ];
     scrollFire(options);
 
-  });
-
-  $(function(){
-
     $('.modal-trigger').leanModal();
   });
+
 })(jQuery); // end of jQuery name space
