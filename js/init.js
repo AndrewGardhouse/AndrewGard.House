@@ -1,7 +1,7 @@
 (function($){
   $(function(){
 
-    $("#header-text").delay(2000).fadeIn(800);
+    $("#header-text").delay(1000).fadeIn(800);
 
     $('.parallax').parallax();
 
