@@ -1,7 +1,7 @@
 # Site settings
 title: Hello, The Internet
 email: AndrewGardhouse@gmail.com
-description: Andrew Gardhouse, full-stack web developer.
+description: Andrew Gardhouse, Full-Stack Web Developer
 baseurl: "" # the subpath of your site, e.g. /blog/ 
 github_username:  AndrewGardhouse
 
