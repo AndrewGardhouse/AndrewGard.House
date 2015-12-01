@@ -1,6 +1,7 @@
 (function($){
   $(function(){
-
+    $('<img />').attr('src', '/img/bg.jpg');
+    
     $("#header-text").delay(1000).fadeIn(800);
 
     $('.parallax').parallax();
