@@ -7,34 +7,36 @@
       </div>
     </div>
     <div class="row">
-      <form class="col s12" action="https://getsimpleform.com/messages?form_api_token=5174751b6c7d4592889749fac693e18c" method="post">
+      <form class="col s12" action="http://formspree.io/andrewgardhouse@gmail.com" method="post">
         <div class="row">
           <div class="input-field col l6 s12">
             <i class="mdi-communication-email prefix"></i>
-            <input id="email" type="email" class="validate" name='email'>
+            <input id="email" type="email" class="validate" name='email' required>
             <label for="email">Email</label>
           </div>
           <div class="input-field col l6 s12">
             <i class="mdi-content-create prefix"></i>
-            <input id="subject" type="text" class="validate" name="subject">
+            <input id="subject" type="text" class="validate" name="_subject" required>
             <label for="subject">Subject</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <i class="mdi-communication-comment prefix"></i>
-            <textarea id="textarea1" class="materialize-textarea" name="message"></textarea>
-            <label for="disabled">Message</label>
+            <textarea id="message" class="materialize-textarea" name="message" required></textarea>
+            <label for="message">Message</label>
           </div>
         </div>
         <div class="row">
           <div class="right-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action">
+            <button class="btn waves-effect waves-light" type="submit">
               Submit
               <i class="mdi-content-send right"></i>
             </button>
           </div>
         </div>
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_next" value="{{ site.baseurl }}/thanks.html" />
       </form>
     </div>
   </div>

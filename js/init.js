@@ -3,12 +3,12 @@
 
     htmlSvg = new Walkway({
       selector: '#code',
-      duration: '3000',
+      duration: '2000',
     });
 
     serverSvg = new Walkway({
       selector: '#server',
-      duration: '3000',
+      duration: '2000',
     });    
 
     $('<img />').attr('src', '/img/bg.jpg');
