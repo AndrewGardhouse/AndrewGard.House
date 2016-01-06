@@ -60,10 +60,24 @@ div.hide-on-med-and-down > div {
   opacity: 0;
 }
 
-#code, #threedb {
+#code, #server {
   height: 300px;
-  width: 300px;
-  opacity: 0;
+}
+
+#code {
+  width: 302px;
+}
+
+#server {
+  width: 280px;
+}
+
+svg path, svg line, svg polyline {
+  stroke: black;
+}
+
+svg path {
+  fill: transparent;
 }
 
 #icon {
