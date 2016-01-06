@@ -60,16 +60,27 @@ div.hide-on-med-and-down > div {
   opacity: 0;
 }
 
-#code, #server {
-  height: 300px;
+#code {
+  height: 280px;
+  width: 290px;
 }
 
-#code {
-  width: 302px;
+@media (max-width: 600px) {
+  #frontend-tech {
+    margin-bottom: 30px;
+  } 
+
+  #code {
+    height: 255px;
+    width: 265px;
+    position: relative;
+    right: 8px;
+  }
 }
 
 #server {
-  width: 280px;
+  height: 300px;
+  width: 240px;
 }
 
 svg path, svg line, svg polyline {
