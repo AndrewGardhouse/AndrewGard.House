@@ -116,3 +116,12 @@ body > footer > div > div {
 #contact-me {
   padding: 25px 0 25px 0;
 }
+
+input, textarea, label {
+  border-color: white !important;
+  color: white !important;
+}
+
+i.active {
+  color: white !important;
+}
