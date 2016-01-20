@@ -7,3 +7,5 @@ github_username:  AndrewGardhouse
 
 # Build settings
 markdown: kramdown
+
+gems: [jekyll-sitemap]
