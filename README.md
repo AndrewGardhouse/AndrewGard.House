@@ -1,3 +1,3 @@
 # My Portfolio
 
-This was built with Jekyll and MaterializeCSS.
+This was built with Jekyll and Materialize
