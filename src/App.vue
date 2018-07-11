@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <router-view/>
-    <LightBeam v-for="n in 20" :getRandomFloat="getRandomFloat"></LightBeam>
+    <BackgroundBeam v-for="n in 18" :getRandomFloat="getRandomFloat"></BackgroundBeam>
+    <LightBeam v-for="n in 10" :getRandomFloat="getRandomFloat"></LightBeam>
   </div>
 </template>
 
 <script>
 import LightBeam from './components/LightBeam.vue';
+import BackgroundBeam from './components/BackgroundBeam.vue';
 
 export default {
   components: {
-    LightBeam
+    LightBeam,
+    BackgroundBeam
   },
   methods: {
     getRandomFloat(min, max) {
