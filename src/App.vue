@@ -1,8 +1,24 @@
 <template>
   <div id="app">
     <router-view/>
+    <LightBeam v-for="n in 20" :getRandomFloat="getRandomFloat"></LightBeam>
   </div>
 </template>
+
+<script>
+import LightBeam from './components/LightBeam.vue';
+
+export default {
+  components: {
+    LightBeam
+  },
+  methods: {
+    getRandomFloat(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+  }
+}
+</script>
 
 <style lang="less">
 @font-face {
@@ -62,31 +78,31 @@ h1 {
   animation-timing-function: linear;
 }
 
-.light-beam {
-  background: linear-gradient(
-    to right,
-    rgba(0, 249, 185, 1),
-    rgba(0, 131, 156, 0.75),
-    rgba(0, 103, 155, 0.5),
-    rgba(24, 0, 103, 0.25),
-    rgba(0,250,188,0)
-  );
-  left: 110%;
-  border-radius: 7.5px;
-  position: absolute;
-  z-index: 1;
-  &::before {
-    content: '';
-    box-shadow: 0px 0 37px 3px #00998F;
-    z-index: -1;
-    position: absolute;
-    width: 5%;
-    height: 100%;
-    border-radius: 15px;
-    top: 0;
-    left: 0;
-  }
-}
+// .light-beam {
+//   background: linear-gradient(
+//     to right,
+//     rgba(0, 249, 185, 1),
+//     rgba(0, 131, 156, 0.75),
+//     rgba(0, 103, 155, 0.5),
+//     rgba(24, 0, 103, 0.25),
+//     rgba(0,250,188,0)
+//   );
+//   left: 110%;
+//   border-radius: 7.5px;
+//   position: absolute;
+//   z-index: 1;
+//   &::before {
+//     content: '';
+//     box-shadow: 0px 0 37px 3px #00998F;
+//     z-index: -1;
+//     position: absolute;
+//     width: 5%;
+//     height: 100%;
+//     border-radius: 15px;
+//     top: 0;
+//     left: 0;
+//   }
+// }
 
 .background-beam {
   border-radius: 15px;
