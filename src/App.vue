@@ -67,7 +67,7 @@ h1 {
   flex-direction: column;
 }
 
-@keyframes slide {
+@keyframes beam {
   100% { left: -110%; }
 }
 </style>

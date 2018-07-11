@@ -25,7 +25,7 @@ export default {
     this.styles.width = `${this.getRandomFloat(15, 30)}%`
     this.styles.height = `${this.getRandomFloat(0.1, 1)}%`
     this.styles.top = `${this.getRandomFloat(5, 95)}%`
-    this.styles.animation = `slide ${this.getRandomFloat(6, 7)}s infinite`
+    this.styles.animation = `beam ${this.getRandomFloat(6, 7)}s infinite`
     this.styles.animationDelay = `${this.getRandomFloat(0, 3)}s`
   }
 }
