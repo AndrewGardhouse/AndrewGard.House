@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <BackgroundBeam v-for="n in 18" :getRandomFloat="getRandomFloat"></BackgroundBeam>
+    <BackgroundBeam v-for="n in 22" :getRandomFloat="getRandomFloat"></BackgroundBeam>
     <LightBeam v-for="n in 10" :getRandomFloat="getRandomFloat"></LightBeam>
   </div>
 </template>
@@ -24,17 +24,13 @@ export default {
 </script>
 
 <style lang="less">
-@font-face {
-  font-family: 'Astron Boy';
-  src: url('./assets/astron-boy.otf')
-}
-
 html, body {
   overflow: hidden
 }
 
 body {
-  font-family: "Helvetica";
+  font-family: 'Press Start 2P', cursive;
+  color: white;
   text-align: center;
   background: linear-gradient(#000, #040029, #040029, #040029, #040029, #040029, #000);
   height: 100vh;
@@ -46,15 +42,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-p {
-  font-family: 'Press Start 2P', cursive;
-  color: white;
-}
-
-h1 {
-  font-family: 'Astron Boy', sans-serif;
   color: white;
 }
 
@@ -65,6 +52,16 @@ h1 {
   z-index: 5;
   display: flex;
   flex-direction: column;
+  animation: page-load 3s;
+}
+
+@keyframes page-load {
+  from {
+    box-shadow: inset 0 0 0 350px #000;
+  }
+  to {
+    box-shadow: inset 0 0 0 0px #000;
+  }
 }
 
 @keyframes beam {
