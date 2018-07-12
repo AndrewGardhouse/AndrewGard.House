@@ -7,34 +7,20 @@
       </div>
     </transition>
     <transition name="options-fade" appear>
-      <div class="options">
-        <ul>
-          <li>
-            <router-link to="/about">
-              <p>
-                About
-              </p>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/about">
-              <p>
-                Get In Touch
-              </p>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/about">
-              <p>
-                Resume
-              </p>
-            </router-link>
-          </li>
-        </ul>
-      </div>
+      <Options></Options>
     </transition>
   </div>
 </template>
+
+<script>
+import Options from '../components/Options.vue';
+
+export default {
+  components: {
+    Options
+  }
+}
+</script>
 
 <style lang="less">
 @keyframes fadein {
