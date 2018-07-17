@@ -14,7 +14,7 @@
         </router-link>
       </li>
       <li class="option">
-        <router-link to="/about">
+        <router-link to="/contact">
           <p @mouseover="isContactHovering = true"
              @mouseout="isContactHovering = false"
              :class="{hovering: isContactHovering}">
