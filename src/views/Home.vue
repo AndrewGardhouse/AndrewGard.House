@@ -32,6 +32,25 @@ export default {
   }
 }
 
+@keyframes page-load {
+  from {
+    box-shadow: inset 0 0 0 350px #000;
+  }
+  to {
+    box-shadow: inset 0 0 0 0px #000;
+  }
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  animation: page-load 3s;
+}
+
 .title-fade-enter-active, .title-fade-leave-active {
   opacity: 0;
   animation: fadein 2s linear;
