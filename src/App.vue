@@ -40,6 +40,19 @@ body {
   position: relative;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 a {
   text-decoration: none;
   color: white;
