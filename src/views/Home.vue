@@ -23,15 +23,6 @@ export default {
 </script>
 
 <style lang="less">
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes page-load {
   from {
     box-shadow: inset 0 0 0 350px #000;

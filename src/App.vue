@@ -61,4 +61,13 @@ a {
 @keyframes beam {
   100% { left: -110%; }
 }
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 </style>
