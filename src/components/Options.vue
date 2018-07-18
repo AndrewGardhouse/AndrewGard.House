@@ -1,13 +1,14 @@
 <template lang="html">
-  <div class="options" v-on:click="showOptions">
+  <div class="options mb-auto" v-on:click="showOptions">
     <div v-if="hideOptions">
-      <p class="prompt">Click Here To Continue</p>
+      <p class="prompt inline-block h3 mt3">Click Here To Continue</p>
     </div>
     <ul v-else>
       <li class="option">
         <router-link to="/about">
           <p @mouseover="isAboutHovering = true"
              @mouseout="isAboutHovering = false"
+             class="my1 inline-block"
              :class="{hovering: isAboutHovering}">
             About
           </p>
@@ -17,6 +18,7 @@
         <router-link to="/contact">
           <p @mouseover="isContactHovering = true"
              @mouseout="isContactHovering = false"
+             class="my1 inline-block"
              :class="{hovering: isContactHovering}">
             Get In Touch
           </p>
@@ -26,6 +28,7 @@
         <a href="https://resume.creddle.io/resume/4zagtq816w4" target="_blank" rel="noopener noreferrer">
           <p @mouseover="isResumeHovering = true"
              @mouseout="isResumeHovering = false"
+             class="mt1 mb0 inline-block"
              :class="{hovering: isResumeHovering}">
             Resume
           </p>
@@ -76,28 +79,31 @@ export default {
   }
 }
 
-.prompt {
-  animation: pulsate 1.5s infinite;
-  animation-delay: 3s;
-  cursor: pointer;
-}
-
-.option {
-  p {
-    display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
+.options {
+  .prompt {
+    animation: pulsate 1.5s infinite;
+    animation-delay: 3s;
+    cursor: pointer;
   }
-  .hovering {
-    &::before {
-      content: '';
-      position: absolute;
-      left: -20px;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-left: 12px solid white;
-      animation: rotate 1s infinite;
+  ul {
+    list-style: none;
+    padding: 0;
+    .option {
+      p {
+        position: relative;
+        font-size: 1.25rem;
+      }
+      .hovering {
+        &::before {
+          content: '';
+          position: absolute;
+          left: -20px;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          border-left: 12px solid white;
+          animation: rotate 1s infinite;
+        }
+      }
     }
   }
 }

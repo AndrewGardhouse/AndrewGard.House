@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="container">
     <transition name="title-fade" appear>
-      <div class="title">
-        <h1>ANDREW GARDHOUSE</h1>
-        <p>Web Developer</p>
+      <div class="title mt-auto">
+        <h1 class="mt0 mb1">ANDREW GARDHOUSE</h1>
+        <p class="my2">Web Developer</p>
       </div>
     </transition>
     <transition name="options-fade" appear>
@@ -63,32 +63,12 @@ export default {
   animation-delay: 3s;
 }
 
-.title, .options {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-}
 .title {
-  margin-top: auto;
   h1 {
     font-size: 4rem;
-    margin-bottom: 0;
   }
   p {
     font-size: 2rem;
-    margin-top: 1rem;
-  }
-}
-
-.options {
-  margin-top: 1.5rem;
-  margin-bottom: auto;
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  p {
-    font-size: 1.25rem;
   }
 }
 </style>
