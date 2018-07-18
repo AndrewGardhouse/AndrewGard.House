@@ -3,7 +3,7 @@
     <div v-if="hideOptions">
       <p class="prompt inline-block h3 mt3">Click Here To Continue</p>
     </div>
-    <ul v-else>
+    <ul class="list-reset" v-else>
       <li class="option">
         <router-link to="/about">
           <p @mouseover="isAboutHovering = true"
@@ -85,24 +85,20 @@ export default {
     animation-delay: 3s;
     cursor: pointer;
   }
-  ul {
-    list-style: none;
-    padding: 0;
-    .option {
-      p {
-        position: relative;
-        font-size: 1.25rem;
-      }
-      .hovering {
-        &::before {
-          content: '';
-          position: absolute;
-          left: -20px;
-          border-top: 8px solid transparent;
-          border-bottom: 8px solid transparent;
-          border-left: 12px solid white;
-          animation: rotate 1s infinite;
-        }
+  .option {
+    p {
+      position: relative;
+      font-size: 1.25rem;
+    }
+    .hovering {
+      &::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 12px solid white;
+        animation: rotate 1s infinite;
       }
     }
   }
