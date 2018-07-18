@@ -53,6 +53,21 @@ body {
   margin-bottom: auto;
 }
 
+.button {
+  background-color: #000;
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 1rem;
+  font-family: 'Press Start 2P';
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border 0.7s;
+  &:hover, &:focus {
+    border-color: rgba(0, 249, 185, 1);
+    outline: none;
+  }
+}
+
 a {
   text-decoration: none;
   color: white;
