@@ -5,17 +5,21 @@
         <h1 class="title mb3 mt-auto" v-if="!formSubmitted">Get In Touch</h1>
       </transition>
       <transition name="thank-you-fade" appear>
-        <div class="thank-you my-auto mx-auto" v-if="formSubmitted">
-          <p class="title h1">
-            Thank you for reaching out!
-          </p>
-          <p class="h2">
-            I appreciate you contacting me! I will make sure to get back to you shortly.
-          </p>
-          <p class="h2">
-            Have a great day!
-          </p>
-          <router-link to="/" class="button inline-block">Back To The Start Menu</router-link>
+        <div class="thank-you my-auto" v-if="formSubmitted">
+          <div class="clearfix">
+            <div class="col col-12 px1">
+              <p class="title">
+                Thank you for reaching out!
+              </p>
+              <p class="h2">
+                I appreciate you contacting me! I will make sure to get back to you shortly.
+              </p>
+              <p class="h2">
+                Have a great day!
+              </p>
+              <router-link to="/" class="button inline-block">Back To The Start Menu</router-link>
+            </div>
+          </div>
         </div>
       </transition>
       <transition name="form-fade" appear>
@@ -131,6 +135,9 @@ export default {
   .thank-you {
     p {
       line-height: 1.2;
+      &.title {
+        font-size: 3rem;
+      }
     }
   }
   .contact-form {
