@@ -1,11 +1,25 @@
 <template lang="html">
-  <div class="contact max-width-4 mx-auto flex flex-column">
-    <div class="my-auto">
-      <transition name="contact-title-fade" appear>
-        <h1 class="contact-title mb1">Get In Touch</h1>
+  <div class="contact" v-bind:class="{ 'form-submitted': formSubmitted }">
+    <div class="wrapper max-width-4 mx-auto flex flex-column">
+      <transition name="contact-title-fade" mode="in-out" appear>
+        <h1 class="title mb3 mt-auto" v-if="!formSubmitted">Get In Touch</h1>
+      </transition>
+      <transition name="thank-you-fade" appear>
+        <div class="thank-you my-auto mx-auto" v-if="formSubmitted">
+          <p class="title h1">
+            Thank you for reaching out!
+          </p>
+          <p class="h2">
+            I appreciate you contacting me! I will make sure to get back to you shortly.
+          </p>
+          <p class="h2">
+            Have a great day!
+          </p>
+          <router-link to="/" class="button inline-block">Back To The Start Menu</router-link>
+        </div>
       </transition>
       <transition name="form-fade" appear>
-        <form class="contact-form" v-on:submit.prevent="submitForm">
+        <form class="contact-form mb-auto" v-on:submit.prevent="submitForm" v-if="!formSubmitted">
           <div class="clearfix">
             <div class="input-field sm-col sm-col-12 md-col-6 px1 mb2">
               <label class="mb1" for="email">Email:</label>
@@ -22,7 +36,7 @@
               <textarea type="text" name="message" v-model="form.message" rows="12" required />
             </div>
           </div>
-          <div class="clearfix mb3">
+          <div class="clearfix">
             <router-link to="/" class="button mx1">Abort</router-link>
             <button type="submit" name="submit" class="button mx1">Launch</button>
           </div>
@@ -39,7 +53,7 @@ import qs from 'qs';
 export default {
   data() {
     return {
-      isHovering: false,
+      formSubmitted: false,
       form: {
         email: '',
         subject: '',
@@ -54,6 +68,7 @@ export default {
         this.form.email = '';
         this.form.subject = '';
         this.form.message = '';
+        this.formSubmitted = true;
         console.log(res);
       })
       .catch((err) => {
@@ -65,26 +80,58 @@ export default {
 </script>
 
 <style lang="less">
-.contact-title-fade-enter-active, .contact-title-fade-leave-active {
+@keyframes successful-form-submit {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+.form-submitted {
+  animation: successful-form-submit 1.5s linear;
+}
+
+.contact-title-fade-enter-active {
   opacity: 0;
   animation: fadein 2s linear;
   animation-delay: 0.5s;
 }
 
-.form-fade-enter-active, .form-fade-leave-active {
+.form-fade-enter-active {
   opacity: 0;
   animation: fadein 0.5s linear;
   animation-delay: 1s;
+}
+
+.thank-you-fade-enter-active {
+  opacity: 0;
+  animation: fadein 2s linear;
+  animation-delay: 1s;
+}
+
+.contact-title-fade-leave-to, .contact-title-fade-leave-active, .form-fade-leave-to, .form-fade-leave-active {
+  display: none;
 }
 
 .contact {
   height: 100vh;
   position: relative;
   z-index: 2;
-  .contact-title {
+  .wrapper {
+    height: 100%;
+  }
+  .title {
     text-align: center;
     margin-top: auto;
     font-size: 4rem;
+    line-height: 1;
+  }
+  .thank-you {
+    p {
+      line-height: 1.2;
+    }
   }
   .contact-form {
     .input-field {
@@ -102,7 +149,7 @@ export default {
         padding: 1rem;
         font-family: 'Press Start 2P';
         resize: none;
-        transition: border 0.7s;
+        transition: border 0.5s;
         &:focus {
           outline: none;
           border-color: rgba(0, 249, 185, 1);
