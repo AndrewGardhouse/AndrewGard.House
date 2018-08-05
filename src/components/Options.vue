@@ -50,7 +50,6 @@ export default {
   },
   methods: {
     showOptions(e) {
-      console.log(e.keyCode);
       this.hideOptions = false;
     }
   }
