@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="light-beam" :style="styles" :class="{ 'end-animation' : endAnimation }"></div>
+  <div class="light-beam" :style="styles" :class="{ 'end-animation' : isAboutPage }"></div>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
       required: true,
       type: Function
     },
-    endAnimation: {
+    isAboutPage: {
       required: true,
       type: Boolean
     }

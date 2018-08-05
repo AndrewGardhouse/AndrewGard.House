@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <router-view/>
-    <BackgroundBeam v-for="n in 22" :getRandomFloat="getRandomFloat" :endAnimation="endAnimation"></BackgroundBeam>
-    <LightBeam v-for="n in 10" :getRandomFloat="getRandomFloat" :endAnimation="endAnimation"></LightBeam>
+    <BackgroundBeam v-for="n in 22" :getRandomFloat="getRandomFloat" :isAboutPage="isAboutPage"></BackgroundBeam>
+    <LightBeam v-for="n in 10" :getRandomFloat="getRandomFloat" :isAboutPage="isAboutPage"></LightBeam>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     BackgroundBeam
   },
   computed: {
-    endAnimation() {
+    isAboutPage() {
       return this.$route.name === 'about';
     }
   },
