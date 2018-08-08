@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="background-beam" :style="styles" :class="{ 'end-animation' : isAboutPage }"></div>
+  <div class="background-beam" :style="styles"></div>
 </template>
 
 <script>
@@ -8,10 +8,6 @@ export default {
     getRandomFloat: {
       required: true,
       type: Function
-    },
-    isAboutPage: {
-      required: true,
-      type: Boolean
     }
   },
   data() {
@@ -59,9 +55,6 @@ export default {
     border-radius: 15px;
     top: 0;
     left: 0;
-  }
-  &.end-animation {
-    animation: none !important;
   }
 }
 </style>
