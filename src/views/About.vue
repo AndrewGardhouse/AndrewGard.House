@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 @keyframes about-page-loaded {
   from {
     top: 40%;

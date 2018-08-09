@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 @keyframes pulsate {
   0% {
     transform: scale(0.9);

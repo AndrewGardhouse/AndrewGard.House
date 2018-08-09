@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 @keyframes slide {
   100% { left: -110%; }
 }

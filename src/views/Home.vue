@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 @keyframes page-load {
   from {
     box-shadow: inset 0 0 0 350px #000;

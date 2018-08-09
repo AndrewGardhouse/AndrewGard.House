@@ -83,7 +83,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 @keyframes successful-form-submit {
   from {
     background-color: white;

@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 .background-beam {
   animation-timing-function: linear;
   border-radius: 15px;
