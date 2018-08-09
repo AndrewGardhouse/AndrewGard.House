@@ -10,10 +10,10 @@ export default {
 <style lang="scss">
 @import "../assets/pixel-art";
 
-$pixel-size: 8px;
+$pixel-size: .5rem;
 
 // Colored
-$character-line: #000;
+$character-fill: #000;
 $character-hat: #15376d;
 $character-hat-front: #f7f7f7;
 
@@ -37,7 +37,7 @@ $character: (
     " ██    ███   ""    ████     "
   ),
   colors: (
-    "█": $character-line,
+    "█": $character-fill,
     "▓": $character-hat,
     "`": $character-hat-front
   ),
