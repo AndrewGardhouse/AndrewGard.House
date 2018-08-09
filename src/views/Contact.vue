@@ -84,17 +84,8 @@ export default {
 </script>
 
 <style lang="scss">
-@keyframes successful-form-submit {
-  from {
-    background-color: white;
-  }
-  to {
-    background-color: transparent;
-  }
-}
-
 .form-submitted {
-  animation: successful-form-submit 1.5s linear;
+  animation: light-flash 1.5s linear;
 }
 
 .contact-title-fade-enter-active {

@@ -20,15 +20,6 @@ export default {
 </script>
 
 <style lang="scss">
-@keyframes about-page-loaded {
-  from {
-    top: 40%;
-  }
-  to {
-    top: 0%;
-  }
-}
-
 .about-page-loaded-enter-active {
   animation: about-page-loaded 2.5s linear;
 }
@@ -36,7 +27,8 @@ export default {
 .about {
   height: 100vh;
   position: relative;
-  z-index: 2;
+  z-index: 5;
+  animation: light-flash 1.5s linear;
   .scene {
     position: relative;
     display: flex;

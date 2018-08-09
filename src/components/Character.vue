@@ -54,14 +54,4 @@ $character: (
   margin: 0 auto;
   animation: character-loading 2.5s linear;
 }
-
-@keyframes character-loading {
-  from {
-    top: 20%;
-  }
-  to {
-    top: 0%;
-  }
-}
-
 </style>

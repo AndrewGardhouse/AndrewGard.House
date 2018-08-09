@@ -23,15 +23,6 @@ export default {
 </script>
 
 <style lang="scss">
-@keyframes page-load {
-  from {
-    box-shadow: inset 0 0 0 350px #000;
-  }
-  to {
-    box-shadow: inset 0 0 0 0px #000;
-  }
-}
-
 .container {
   position: absolute;
   width: 100%;

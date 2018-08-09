@@ -1,0 +1,48 @@
+@keyframes beam {
+  100% { left: -110%; }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-load {
+  from {
+    box-shadow: inset 0 0 0 350px #000;
+  }
+  to {
+    box-shadow: inset 0 0 0 0px #000;
+  }
+}
+
+@keyframes light-flash {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes about-page-loaded {
+  from {
+    top: 40%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes character-loading {
+  from {
+    top: 20%;
+  }
+  to {
+    top: 0%;
+  }
+}

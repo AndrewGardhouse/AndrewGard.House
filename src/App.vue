@@ -24,6 +24,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/keyframes";
+
 html, body {
   overflow: hidden
 }
@@ -71,18 +73,5 @@ body {
 a {
   text-decoration: none;
   color: white;
-}
-
-@keyframes beam {
-  100% { left: -110%; }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 </style>
