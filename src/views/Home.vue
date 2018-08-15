@@ -23,6 +23,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/breakpoints";
+
 .container {
   position: absolute;
   width: 100%;
@@ -47,10 +49,16 @@ export default {
 
 .title {
   h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
+    @media #{$breakpoint-md} {
+      font-size: 4rem;
+    }
   }
   p {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    @media #{$breakpoint-md} {
+      font-size: 2rem;
+    }
   }
 }
 </style>

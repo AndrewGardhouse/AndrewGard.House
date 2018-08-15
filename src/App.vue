@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <router-view/>
-    <BackgroundBeam v-for="n in 22" :getRandomFloat="getRandomFloat"></BackgroundBeam>
-    <LightBeam v-for="n in 10" :getRandomFloat="getRandomFloat"></LightBeam>
+    <BackgroundBeam v-for="n in 22" :key="n" :getRandomFloat="getRandomFloat"></BackgroundBeam>
+    <LightBeam v-for="n in 10" :key="n" :getRandomFloat="getRandomFloat"></LightBeam>
   </div>
 </template>
 
