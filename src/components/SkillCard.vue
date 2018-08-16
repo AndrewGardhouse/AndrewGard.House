@@ -1,6 +1,7 @@
 <template lang="html">
-  <div class="skill-card mb3 p2">
+  <div class="skill-card mb3 p2 relative">
     <p class="title h3 inline-block mt0 mb2">{{ title }}</p>
+    <span class="close absolute" v-on:click="$emit(`${eventName}`)">&#x02DF;</span>
     <div class="flex skills">
       <div class="skill-names">
         <div v-for="skill in skills" class="name flex my1">
@@ -28,6 +29,10 @@ export default {
     skills: {
       type: Array,
       required: true
+    },
+    eventName: {
+      type: String,
+      required: true
     }
   }
 }
@@ -49,6 +54,14 @@ export default {
     border-radius: 1px;
     .title {
       text-align: center;
+    }
+    .close {
+      top: 0.5rem;
+      right: 1rem;
+      line-height: 1;
+      height: 25px;
+      font-size: 3rem;
+      cursor: pointer;
     }
     .skills {
       .skill-names {
