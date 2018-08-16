@@ -3,7 +3,10 @@
     <transition name="about-page-loaded" appear>
       <div class="scene">
         <div class="max-width-4 mx-auto info inline-block relative">
-          <p class="h2 pb4">After that bit of shenanigans, Cool and I looked at buying another vendor set for my Shadow spec but I was having a lot of crashing issues as soon as I ported from Org to the Valley. </p>
+          <!-- <SkillCard
+            title="Front-End"
+            :skills="frontEndSkills"></SkillCard> -->
+          <p class="h2 text-scroll pb4">After that bit of shenanigans, Cool and I looked at buying another vendor set for my Shadow spec but I was having a lot of crashing issues as soon as I ported from Org to the Valley. </p>
           <div class="skills flex mb3">
             <button class="button mx3 first">Front-End</button>
             <button class="button mx3 second">Back-End</button>
@@ -19,10 +22,34 @@
 
 <script>
 import Character from '../components/Character'
+import SkillCard from '../components/SkillCard'
 
 export default {
   components: {
-    Character
+    Character,
+    SkillCard
+  },
+  data() {
+    return {
+      frontEndSkills: [
+        {
+          type: 'VueJS',
+          level: 85
+        },
+        {
+          type: 'React',
+          level: 40
+        },
+        {
+          type: 'Angular',
+          level: 50
+        },
+        {
+          type: 'SASS/SCSS',
+          level: 60
+        }
+      ]
+    }
   }
 }
 </script>
@@ -45,7 +72,7 @@ export default {
     height: 100%;
     top: 0%;
     .info {
-      p {
+      .text-scroll {
         line-height: 1.5;
         overflow: hidden;
         padding: 0;
@@ -58,7 +85,6 @@ export default {
       }
       .skills {
         justify-content: center;
-        flex: 1 1 0;
         .button {
           animation: fadein;
           animation-timing-function: linear;
