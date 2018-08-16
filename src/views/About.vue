@@ -51,7 +51,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.hasInitialPageLoadAnimation = false;
-    }, 6000);
+    }, 7000);
   },
   data() {
     return {
@@ -61,15 +61,19 @@ export default {
       frontEndSkills: [
         {
           type: 'VueJS',
-          level: 85
+          level: 80
         },
         {
-          type: 'Charisma',
-          level: 60
+          type: 'Willpower',
+          level: 98
         },
         {
           type: 'React',
           level: 40
+        },
+        {
+          type: 'Perception',
+          level: 90
         },
         {
           type: 'Angular',
@@ -87,11 +91,15 @@ export default {
         },
         {
           type: 'Luck',
-          level: 65
+          level: 95
         },
         {
           type: 'Rails',
           level: 60
+        },
+        {
+          type: 'Resilience',
+          level: 98
         }
       ]
     }
