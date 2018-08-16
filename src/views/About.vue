@@ -3,13 +3,24 @@
     <transition name="about-page-loaded" appear>
       <div class="scene">
         <div class="max-width-4 mx-auto info inline-block relative">
-          <!-- <SkillCard
+          <SkillCard
             title="Front-End"
-            :skills="frontEndSkills"></SkillCard> -->
-          <p class="h2 text-scroll pb4">After that bit of shenanigans, Cool and I looked at buying another vendor set for my Shadow spec but I was having a lot of crashing issues as soon as I ported from Org to the Valley. </p>
-          <div class="skills flex mb3">
-            <button class="button mx3 first">Front-End</button>
-            <button class="button mx3 second">Back-End</button>
+            :skills="frontEndSkills"
+            eventName="toggleFrontEnd"
+            v-if="showFrontEndCard"
+            v-on:toggleFrontEnd="toggleFrontEndCard"></SkillCard>
+          <SkillCard
+            title="Back-End"
+            :skills="backEndSkills"
+            eventName="toggleBackEnd"
+            v-if="showBackEndCard"
+            v-on:toggleBackEnd="toggleBackEndCard"></SkillCard>
+          <p class="h2 text-scroll pb4" v-if="!showBackEndCard && !showFrontEndCard">
+            After that bit of shenanigans, Cool and I looked at buying another vendor set for my Shadow spec but I was having a lot of crashing issues as soon as I ported from Org to the Valley.
+          </p>
+          <div class="skills flex mb3" v-if="!showBackEndCard && !showFrontEndCard">
+            <button class="button mx3 first" v-on:click="toggleFrontEndCard">Front-End</button>
+            <button class="button mx3 second" v-on:click="toggleBackEndCard">Back-End</button>
             <router-link to="/" class="button mx3 third">Home</router-link>
           </div>
         </div>
@@ -31,10 +42,16 @@ export default {
   },
   data() {
     return {
+      showFrontEndCard: false,
+      showBackEndCard: false,
       frontEndSkills: [
         {
           type: 'VueJS',
           level: 85
+        },
+        {
+          type: 'Charisma',
+          level: 60
         },
         {
           type: 'React',
@@ -43,12 +60,34 @@ export default {
         {
           type: 'Angular',
           level: 50
+        }
+      ],
+      backEndSkills: [
+        {
+          type: 'Express',
+          level: 85
         },
         {
-          type: 'SASS/SCSS',
+          type: 'Laravel',
+          level: 30
+        },
+        {
+          type: 'Luck',
+          level: 65
+        },
+        {
+          type: 'Rails',
           level: 60
         }
       ]
+    }
+  },
+  methods: {
+    toggleFrontEndCard() {
+      this.showFrontEndCard = !this.showFrontEndCard;
+    },
+    toggleBackEndCard() {
+      this.showBackEndCard = !this.showBackEndCard;
     }
   }
 }
@@ -81,7 +120,7 @@ export default {
         animation-timing-function: linear;
         animation-duration: 3s;
         animation-fill-mode: forwards;
-        animation-delay: 1s;
+        animation-delay: 2.5s;
       }
       .skills {
         justify-content: center;
@@ -94,13 +133,13 @@ export default {
           flex-grow: 1;
           flex-basis: 0;
           &.first {
-            animation-delay: 3.25s;
+            animation-delay: 4s;
           }
           &.second {
-            animation-delay: 3.75s;
+            animation-delay: 4.5s;
           }
           &.third {
-            animation-delay: 4.25s;
+            animation-delay: 5s;
           }
         }
       }
