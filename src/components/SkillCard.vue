@@ -1,15 +1,15 @@
 <template lang="html">
   <div class="skill-card mb3 p2 relative">
-    <p class="title h3 inline-block mt0 mb2">{{ title }}</p>
+    <p class="title h3 inline-block mt0 mb0">{{ title }}</p>
     <span class="close absolute" v-on:click="$emit(`${eventName}`)">&#x02DF;</span>
     <div class="flex skills">
       <div class="skill-names">
-        <div v-for="skill in skills" class="name flex my1">
+        <div v-for="skill in skills" class="name flex mt2">
           <p class="my-auto">{{ skill.type }}</p>
         </div>
       </div>
       <div class="skill-levels ml2">
-        <div v-for="skill in skills" class="skill-bar relative my1">
+        <div v-for="skill in skills" class="skill-bar relative mt2">
           <span class="fill absolute" :style="`width: ${skill.level}%;`"></span>
           <span class="absolute bottom-corner-left"></span>
           <span class="absolute bottom-corner-right"></span>
@@ -46,6 +46,7 @@ export default {
     $skill-bar-border-size: 1;
     $skill-bar-border-color: #d9d9d9;
 
+    transition: all 3s linear;
     min-width: 40vw;
     background-color: $card-background;
     border-radius: 1px;
@@ -120,11 +121,11 @@ export default {
             height: 100%;
             left: 0;
             background-color: $skill-bar-border-color;
-            box-shadow: inset 0 0 0 3px #808080,
-                        inset 0 0 0 6px #bfbfbf;
             transition: width 0.7s linear;
             width: 2%;
             transition-delay: 1s;
+            box-shadow: inset 0 0 0 3px #808080,
+                        inset 0 0 0 6px #bfbfbf;
             &::before, &::after {
               content: '';
               background-color: #000;
