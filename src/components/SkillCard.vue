@@ -48,10 +48,10 @@ export default {
 
     min-width: 40vw;
     background-color: $card-background;
+    border-radius: 1px;
     box-shadow: 0 0 0 3px $skill-bar-border-color,
                 0 0 0 6px #283030,
                 inset 0 0 0 3px #808080;
-    border-radius: 1px;
     .title {
       text-align: center;
     }
@@ -66,7 +66,7 @@ export default {
     .skills {
       .skill-names {
         .name {
-          min-height: 22px;
+          min-height: 20px;
           p {
             text-align: left;
           }
