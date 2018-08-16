@@ -15,13 +15,21 @@
             eventName="toggleBackEnd"
             v-if="showBackEndCard"
             v-on:toggleBackEnd="toggleBackEndCard"></SkillCard>
-          <p class="h2 text-scroll pb4" v-if="!showBackEndCard && !showFrontEndCard">
-            After that bit of shenanigans, Cool and I looked at buying another vendor set for my Shadow spec but I was having a lot of crashing issues as soon as I ported from Org to the Valley.
-          </p>
-          <div class="skills flex mb3" v-if="!showBackEndCard && !showFrontEndCard">
-            <button class="button mx3 first" v-on:click="toggleFrontEndCard">Front-End</button>
-            <button class="button mx3 second" v-on:click="toggleBackEndCard">Back-End</button>
-            <router-link to="/" class="button mx3 third">Home</router-link>
+          <div class="detail-wrapper" v-show="!showBackEndCard && !showFrontEndCard">
+            <p class="h2 text pb4" :class="{ 'text-scroll': hasInitialPageLoadAnimation }">
+              After that bit of shenanigans, Cool and I looked at buying another vendor set for my Shadow spec but I was having a lot of crashing issues as soon as I ported from Org to the Valley.
+            </p>
+            <div class="skills flex mb3">
+              <button class="button mx3 first"
+                      :class="{ 'fadein': hasInitialPageLoadAnimation }"
+                      v-on:click="toggleFrontEndCard">Front-End</button>
+              <button class="button mx3 second"
+                      :class="{ 'fadein': hasInitialPageLoadAnimation }"
+                      v-on:click="toggleBackEndCard">Back-End</button>
+              <router-link to="/"
+                           class="button mx3 third"
+                           :class="{ 'fadein': hasInitialPageLoadAnimation }">Home</router-link>
+            </div>
           </div>
         </div>
         <Character></Character>
@@ -40,10 +48,16 @@ export default {
     Character,
     SkillCard
   },
+  mounted() {
+    setTimeout(() => {
+      this.hasInitialPageLoadAnimation = false;
+    }, 6000);
+  },
   data() {
     return {
       showFrontEndCard: false,
       showBackEndCard: false,
+      hasInitialPageLoadAnimation: true,
       frontEndSkills: [
         {
           type: 'VueJS',
@@ -111,27 +125,31 @@ export default {
     height: 100%;
     top: 0%;
     .info {
-      .text-scroll {
+      .text {
         line-height: 1.5;
         overflow: hidden;
         padding: 0;
-        opacity: 0;
-        animation: text-scroll;
-        animation-timing-function: linear;
-        animation-duration: 3s;
-        animation-fill-mode: forwards;
-        animation-delay: 2.5s;
+        &.text-scroll {
+          animation: text-scroll;
+          animation-timing-function: linear;
+          animation-duration: 3s;
+          animation-fill-mode: forwards;
+          animation-delay: 2.5s;
+          opacity: 0;
+        }
       }
       .skills {
         justify-content: center;
         .button {
-          animation: fadein;
-          animation-timing-function: linear;
-          animation-duration: .75s;
-          opacity: 0;
-          animation-fill-mode: forwards;
           flex-grow: 1;
           flex-basis: 0;
+          &.fadein {
+            animation: fadein;
+            animation-timing-function: linear;
+            animation-duration: .75s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+          }
           &.first {
             animation-delay: 4s;
           }
@@ -147,6 +165,7 @@ export default {
     .ground {
       height: 25%;
       background-color: #000;
+      animation-duration: 3s;
     }
   }
 }
