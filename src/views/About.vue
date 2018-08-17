@@ -2,22 +2,27 @@
   <div class="about">
     <transition name="about-page-loaded" appear>
       <div class="scene">
-        <div class="max-width-4 mx-auto info inline-block relative">
+        <div class="max-width-4 info">
           <transition name="fade-in" mode="out-in">
             <div class="detail-wrapper" v-if="!showBackEndCard && !showFrontEndCard">
-              <p class="h2 text pb4" :class="{ 'text-scroll': hasInitialPageLoadAnimation }">
-                After that bit of shenanigans, Cool and I looked at buying another vendor set for my Shadow spec but I was having a lot of crashing issues as soon as I ported from Org to the Valley.
+              <p class="text" :class="{ 'text-scroll': hasInitialPageLoadAnimation }">
+                In the midst of chaos, a digital nomad on a quest to use his abilities to help bring peace to the world and level up and learn new skills.
               </p>
-              <div class="skills flex mb3">
-                <button class="button mx3 first"
-                        :class="{ 'fadein': hasInitialPageLoadAnimation }"
-                        v-on:click="toggleFrontEndCard">Front-End</button>
-                <button class="button mx3 second"
-                        :class="{ 'fadein': hasInitialPageLoadAnimation }"
-                        v-on:click="toggleBackEndCard">Back-End</button>
-                <router-link to="/"
-                             class="button mx3 third"
-                             :class="{ 'fadein': hasInitialPageLoadAnimation }">Home</router-link>
+              <div class="skills clearfix mb2">
+                <div class="col col-12 md-col-4 flex px1 mb1">
+                  <button class="button first"
+                          :class="{ 'fadein': hasInitialPageLoadAnimation }"
+                          v-on:click="toggleFrontEndCard">Front-End</button>
+                </div>
+                <div class="col col-12 md-col-4 flex px1 mb1">
+                  <button class="button second"
+                          :class="{ 'fadein': hasInitialPageLoadAnimation }"
+                          v-on:click="toggleBackEndCard">Back-End</button>
+                </div>
+                <div class="col col-12 md-col-4 flex px1 mb1">
+                  <router-link to="/" class="button third"
+                               :class="{ 'fadein': hasInitialPageLoadAnimation }">Home</router-link>
+                </div>
               </div>
             </div>
             <SkillCard
@@ -118,6 +123,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/breakpoints";
+
 .about-page-loaded-enter-active {
   animation: about-page-loaded 2.5s linear;
 }
@@ -135,6 +142,12 @@ export default {
     height: 100%;
     top: 0%;
     .info {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      @media #{$breakpoint-md} {
+        margin-left: auto;
+        margin-right: auto;
+      }
       .detail-wrapper {
         &.fade-in-enter-active, &.fade-in-leave-active {
           transition: all 0.7s linear;
@@ -147,6 +160,9 @@ export default {
           line-height: 1.5;
           overflow: hidden;
           padding: 0;
+          @media #{$breakpoint-md} {
+            font-size: 1.5rem
+          }
           &.text-scroll {
             animation: text-scroll;
             animation-timing-function: linear;
@@ -157,10 +173,9 @@ export default {
           }
         }
         .skills {
-          justify-content: center;
           .button {
-            flex-grow: 1;
-            flex-basis: 0;
+            flex: 1;
+            width: 100%;
             &.fadein {
               animation: fadein;
               animation-timing-function: linear;
@@ -182,9 +197,12 @@ export default {
       }
     }
     .ground {
-      height: 25%;
+      height: 12.5%;
       background-color: #000;
       animation-duration: 3s;
+      @media #{$breakpoint-md} {
+        height: 25%;
+      }
     }
   }
 }
