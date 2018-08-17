@@ -54,7 +54,7 @@ export default {
                 inset 0 0 0 3px #808080;
 
     &.fade-in-enter-active, &.fade-in-leave-active {
-      transition: all 1s linear;
+      transition: all 0.7s linear;
       opacity: 1;
     }
     &.fade-in-enter, &.fade-in-leave-to {

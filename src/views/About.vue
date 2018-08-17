@@ -137,7 +137,7 @@ export default {
     .info {
       .detail-wrapper {
         &.fade-in-enter-active, &.fade-in-leave-active {
-          transition: all 1s linear;
+          transition: all 0.7s linear;
           opacity: 1;
         }
         &.fade-in-enter, &.fade-in-leave-to {
