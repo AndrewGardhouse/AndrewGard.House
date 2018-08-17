@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="skill-card mb3 p2 relative">
-    <p class="title h3 inline-block mt0 mb0">{{ title }}</p>
+  <div class="skill-card mb3 mx-auto p2 relative">
+    <p class="title h3 inline-block m0">{{ title }}</p>
     <span class="close absolute" v-on:click="$emit(`${eventName}`)">&#x02DF;</span>
     <div class="flex skills">
       <div class="skill-names">
@@ -46,13 +46,20 @@ export default {
     $skill-bar-border-size: 1;
     $skill-bar-border-color: #d9d9d9;
 
-    transition: all 3s linear;
     min-width: 40vw;
     background-color: $card-background;
     border-radius: 1px;
     box-shadow: 0 0 0 3px $skill-bar-border-color,
                 0 0 0 6px #283030,
                 inset 0 0 0 3px #808080;
+
+    &.fade-in-enter-active, &.fade-in-leave-active {
+      transition: all 1s linear;
+      opacity: 1;
+    }
+    &.fade-in-enter, &.fade-in-leave-to {
+      opacity: 0;
+    }
     .title {
       text-align: center;
     }
