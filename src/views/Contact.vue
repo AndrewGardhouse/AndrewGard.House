@@ -84,6 +84,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/breakpoints";
+
 .form-submitted {
   animation: light-flash 1.5s linear;
 }
@@ -120,8 +122,11 @@ export default {
   .title {
     text-align: center;
     margin-top: auto;
-    font-size: 4rem;
-    line-height: 1;
+    line-height: 1.2;
+    font-size: 2.5rem;
+    @media #{$breakpoint-md} {
+      font-size: 4rem;
+    }
   }
   .thank-you {
     p {
