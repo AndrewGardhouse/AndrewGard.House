@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Contact from './views/Contact.vue'
+import Error404 from './views/Error404.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact
+    },
+    {
+        path: '*',
+        name: '404',
+        component: Error404
     }
   ]
 })
