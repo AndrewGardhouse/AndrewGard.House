@@ -57,27 +57,6 @@ export default {
 </script>
 
 <style lang="scss">
-@keyframes pulsate {
-  0% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.9);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotateX(0deg);
-  }
-  to {
-    transform: rotateX(180deg);
-  }
-}
-
 .options {
   .prompt {
     animation: pulsate 1.5s infinite;
