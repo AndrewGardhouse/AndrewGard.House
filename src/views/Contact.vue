@@ -50,10 +50,10 @@
         <div class="links mb-auto mt2 flex justify-around" v-if="!formSubmitted">
           <Link text="GitHub"
                 url="https://github.com/AndrewGardhouse/"
-                :isLocal="false"></Link>
+                :isLocal="false" />
           <Link text="LinkedIn"
                 url="https://www.linkedin.com/in/andrewgardhouse/"
-                :isLocal="false"></Link>
+                :isLocal="false" />
         </div>
       </transition>
     </div>

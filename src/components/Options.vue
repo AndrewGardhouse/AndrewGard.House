@@ -6,16 +6,16 @@
     <ul class="list-reset" v-else>
       <li class="option">
         <Link text="About"
-              url="/about"></Link>
+              url="/about" />
       </li>
       <li class="option">
         <Link text="Get In Touch"
-              url="/contact"></Link>
+              url="/contact" />
       </li>
       <li class="option">
         <Link text="Resume"
               url="https://resume.creddle.io/resume/4zagtq816w4"
-              :isLocal="false"></Link>
+              :isLocal="false" />
       </li>
     </ul>
   </div>
