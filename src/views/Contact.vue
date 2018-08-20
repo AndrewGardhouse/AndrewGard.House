@@ -12,7 +12,7 @@
                 Thank you for reaching out!
               </p>
               <p class="h2">
-                I appreciate you contacting me! I will make sure to get back to you shortly.
+                I will make sure to get back to you shortly!
               </p>
               <p class="h2">
                 Have a great day!
@@ -23,11 +23,11 @@
         </div>
       </transition>
       <transition name="form-fade" appear>
-        <form class="contact-form mb-auto" v-on:submit.prevent="submitForm" v-if="!formSubmitted">
+        <form class="contact-form" v-on:submit.prevent="submitForm" v-if="!formSubmitted">
           <div class="clearfix">
             <div class="input-field sm-col sm-col-12 md-col-6 px1 mb2">
               <label class="mb1" for="email">Email:</label>
-              <input id="email" type="email" name="email" v-model="form.email" autofocus required />
+              <input id="email" type="email" name="email" v-model="form.email" required />
             </div>
             <div class="input-field sm-col sm-col-12 md-col-6 px1 mb2">
               <label class="mb1" for="subject">Subject:</label>
@@ -46,6 +46,26 @@
           </div>
         </form>
       </transition>
+      <transition name="form-fade" appear>
+        <div class="links mb-auto mt2 flex justify-around" v-if="!formSubmitted">
+          <a href="https://github.com/AndrewGardhouse/" target="_blank" rel="noopener noreferrer">
+            <p @mouseover="isGitHubHovering = true"
+               @mouseout="isGitHubHovering = false"
+               class="mt1 mb0 inline-block"
+               :class="{hovering: isGitHubHovering}">
+              GitHub
+            </p>
+          </a>
+          <a href="https://www.linkedin.com/in/andrewgardhouse/" target="_blank" rel="noopener noreferrer">
+            <p @mouseover="isLinkedInHovering = true"
+               @mouseout="isLinkedInHovering = false"
+               class="mt1 mb0 inline-block"
+               :class="{hovering: isLinkedInHovering}">
+              LinkedIn
+            </p>
+          </a>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -57,6 +77,8 @@ import qs from 'qs';
 export default {
   data() {
     return {
+      isLinkedInHovering: false,
+      isGitHubHovering: false,
       formSubmitted: false,
       form: {
         email: '',
@@ -157,6 +179,24 @@ export default {
           outline: none;
           border-color: rgba(0, 249, 185, 1);
         }
+      }
+    }
+  }
+  .links {
+    p {
+      position: relative;
+      font-size: 1.25rem;
+      user-select: none;
+    }
+    .hovering {
+      &::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 12px solid white;
+        animation: rotate 1s infinite;
       }
     }
   }
