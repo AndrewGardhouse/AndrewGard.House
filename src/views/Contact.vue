@@ -90,15 +90,14 @@ export default {
   methods: {
     submitForm() {
       axios.post('https://formcarry.com/s/jDkHQKrocy', qs.stringify(this.form))
-      .then((res) => {
+      .then(() => {
         this.form.email = '';
         this.form.subject = '';
         this.form.message = '';
         this.formSubmitted = true;
-        console.log(res);
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       })
     }
   }

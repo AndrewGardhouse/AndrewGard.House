@@ -49,7 +49,7 @@ export default {
     }
   },
   methods: {
-    showOptions(e) {
+    showOptions() {
       this.hideOptions = false;
     }
   }

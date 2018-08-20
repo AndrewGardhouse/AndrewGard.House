@@ -4,12 +4,12 @@
     <span class="close absolute" v-on:click="$emit(`${eventName}`)">x</span>
     <div class="flex skills">
       <div class="skill-names">
-        <div v-for="skill in skills" class="name flex mt2">
+        <div v-for="skill in skills" :key="`skill-${skill.type}`" class="name flex mt2">
           <p class="my-auto">{{ skill.type }}</p>
         </div>
       </div>
       <div class="skill-levels ml2">
-        <div v-for="skill in skills" class="skill-bar relative mt2">
+        <div v-for="skill in skills" :key="`skill-level-${skill.type}`" class="skill-bar relative mt2">
           <span class="fill absolute" :style="`width: ${skill.level}%;`"></span>
           <span class="absolute bottom-corner-left"></span>
           <span class="absolute bottom-corner-right"></span>
