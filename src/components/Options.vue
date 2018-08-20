@@ -67,6 +67,7 @@ export default {
     p {
       position: relative;
       font-size: 1.25rem;
+      user-select: none;
     }
     .hovering {
       &::before {
