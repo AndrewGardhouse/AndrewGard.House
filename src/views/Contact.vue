@@ -48,22 +48,12 @@
       </transition>
       <transition name="form-fade" appear>
         <div class="links mb-auto mt2 flex justify-around" v-if="!formSubmitted">
-          <a href="https://github.com/AndrewGardhouse/" target="_blank" rel="noopener noreferrer">
-            <p @mouseover="isGitHubHovering = true"
-               @mouseout="isGitHubHovering = false"
-               class="mt1 mb0 inline-block"
-               :class="{hovering: isGitHubHovering}">
-              GitHub
-            </p>
-          </a>
-          <a href="https://www.linkedin.com/in/andrewgardhouse/" target="_blank" rel="noopener noreferrer">
-            <p @mouseover="isLinkedInHovering = true"
-               @mouseout="isLinkedInHovering = false"
-               class="mt1 mb0 inline-block"
-               :class="{hovering: isLinkedInHovering}">
-              LinkedIn
-            </p>
-          </a>
+          <Link text="GitHub"
+                url="https://github.com/AndrewGardhouse/"
+                :isLocal="false"></Link>
+          <Link text="LinkedIn"
+                url="https://www.linkedin.com/in/andrewgardhouse/"
+                :isLocal="false"></Link>
         </div>
       </transition>
     </div>
@@ -73,12 +63,14 @@
 <script>
 import axios from 'axios';
 import qs from 'qs';
+import Link from '../components/Link';
 
 export default {
+  components: {
+    Link
+  },
   data() {
     return {
-      isLinkedInHovering: false,
-      isGitHubHovering: false,
       formSubmitted: false,
       form: {
         email: '',

@@ -5,47 +5,32 @@
     </div>
     <ul class="list-reset" v-else>
       <li class="option">
-        <router-link to="/about">
-          <p @mouseover="isAboutHovering = true"
-             @mouseout="isAboutHovering = false"
-             class="my1 inline-block"
-             :class="{hovering: isAboutHovering}">
-            About
-          </p>
-        </router-link>
+        <Link text="About"
+              url="/about"></Link>
       </li>
       <li class="option">
-        <router-link to="/contact">
-          <p @mouseover="isContactHovering = true"
-             @mouseout="isContactHovering = false"
-             class="my1 inline-block"
-             :class="{hovering: isContactHovering}">
-            Get In Touch
-          </p>
-        </router-link>
+        <Link text="Get In Touch"
+              url="/contact"></Link>
       </li>
       <li class="option">
-        <a href="https://resume.creddle.io/resume/4zagtq816w4" target="_blank" rel="noopener noreferrer">
-          <p @mouseover="isResumeHovering = true"
-             @mouseout="isResumeHovering = false"
-             class="mt1 mb0 inline-block"
-             :class="{hovering: isResumeHovering}">
-            Resume
-          </p>
-        </a>
+        <Link text="Resume"
+              url="https://resume.creddle.io/resume/4zagtq816w4"
+              :isLocal="false"></Link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import Link from './Link';
+
 export default {
+  components: {
+    Link
+  },
   data() {
     return {
       hideOptions: true,
-      isAboutHovering: false,
-      isContactHovering: false,
-      isResumeHovering: false,
     }
   },
   methods: {
@@ -62,24 +47,6 @@ export default {
     animation: pulsate 1.5s infinite;
     animation-delay: 3s;
     cursor: pointer;
-  }
-  .option {
-    p {
-      position: relative;
-      font-size: 1.25rem;
-      user-select: none;
-    }
-    .hovering {
-      &::before {
-        content: '';
-        position: absolute;
-        left: -20px;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-left: 12px solid white;
-        animation: rotate 1s infinite;
-      }
-    }
   }
 }
 </style>
