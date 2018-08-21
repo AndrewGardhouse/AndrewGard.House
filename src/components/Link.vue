@@ -46,16 +46,21 @@ p {
   position: relative;
   font-size: 1.25rem;
   user-select: none;
-}
-.hovering {
   &::before {
     content: '';
     position: absolute;
     left: -20px;
+    opacity: 0;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
     border-left: 12px solid white;
     animation: rotate 1s infinite;
+    transition: opacity 0.3s;
+  }
+}
+.hovering {
+  &::before {
+    opacity: 1;
   }
 }
 </style>
