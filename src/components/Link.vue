@@ -1,0 +1,61 @@
+<template lang="html">
+  <router-link :to="url" v-if="isLocal">
+    <p @mouseover="isHovering = true"
+       @mouseout="isHovering = false"
+       class="my1 inline-block"
+       :class="{hovering: isHovering}">
+      {{ text }}
+    </p>
+  </router-link>
+  <a :href="url" target="_blank" rel="noopener noreferrer" v-else>
+    <p @mouseover="isHovering = true"
+       @mouseout="isHovering = false"
+       class="mt1 mb0 inline-block"
+       :class="{hovering: isHovering}">
+      {{ text }}
+    </p>
+  </a>
+</template>
+
+<script>
+export default {
+  props: {
+    text: {
+      required: true,
+      type: String
+    },
+    isLocal: {
+      default: true,
+      type: Boolean
+    },
+    url: {
+      required: true,
+      type: String
+    }
+  },
+  data() {
+    return {
+      isHovering: false
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+p {
+  position: relative;
+  font-size: 1.25rem;
+  user-select: none;
+}
+.hovering {
+  &::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid white;
+    animation: rotate 1s infinite;
+  }
+}
+</style>

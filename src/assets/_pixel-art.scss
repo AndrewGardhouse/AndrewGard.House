@@ -1,0 +1,87 @@
+// https://codepen.io/andrewarchi/pen/NAzzmb
+
+$required-properties: (id, frames, colors);
+$default-settings: (
+  pixel-size: 10px, // Pixel size
+  padding: 0, // Space between pixels
+  speed: .25s // Frame speed
+);
+
+@function strip-zero-unit($number) {
+  @return if($number == 0, 0, $number);
+}
+
+@mixin setup-pixels($id, $frames, $colors, $pixel-size, $padding, $speed) {
+  $width: str-length(nth(nth($frames, 1), 1));
+  $height: length($frames);
+  width: $width * ($pixel-size + $padding) - $padding;
+  height: $height * ($pixel-size + $padding) - $padding;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: $pixel-size;
+    height: $pixel-size;
+    display: block;
+    left: -$pixel-size; // Correct for offset
+    position: absolute;
+  }
+}
+
+@mixin draw-frame($frames, $colors, $pixel-size, $padding, $index: 1) {
+  $box-shadow: ();
+  @for $i from 1 through length($frames) {
+    $row: nth(nth($frames, $i), $index);
+    @for $j from 1 through str-length($row) {
+      $pixel: str-slice($row, $j, $j);
+      $color: map-get($colors, $pixel);
+      @if $color != transparent and $color != null {
+        $x: ($j - 1) * ($pixel-size + $padding) + $pixel-size; // Offset to the right by one pixel so pixel (0, 0) isn't covered up
+        $y: ($i - 1) * ($pixel-size + $padding);
+        $box-shadow: append($box-shadow, strip-zero-unit($x) strip-zero-unit($y) $color, comma);
+      }
+    }
+  }
+  box-shadow: $box-shadow;
+}
+
+@mixin draw-frames($id, $frames, $colors, $pixel-size, $padding, $speed) {
+  $frame-count: length(nth($frames, 1));
+
+  @if ($frame-count == 1) {
+    @include draw-frame($frames, $colors, $pixel-size, $padding);
+  }
+  @else {
+    animation: #{$id}-frames $frame-count * $speed steps(1) infinite;
+    @keyframes #{$id}-frames {
+      @for $i from 1 through $frame-count {
+        #{100% / $frame-count * ($i - 1)} {
+          @include draw-frame($frames, $colors, $pixel-size, $padding, $i);
+        }
+      }
+    }
+  }
+}
+
+@mixin pixel-art-item($id, $data) {
+  $data: map-merge(map-merge($default-settings, $data), (id: $id));
+
+  @each $property in $required-properties {
+    @if not map-has-key($data, $property) {
+      @error "The property `#{$property}` is required";
+    }
+  }
+
+  ##{$id} {
+    @include setup-pixels($data...);
+    &::after {
+      @include draw-frames($data...);
+    }
+  }
+}
+
+@mixin pixel-art($pixel-art, $settings: ()) {
+  @each $id, $data in $pixel-art {
+    @include pixel-art-item($id, map-merge($settings, $data));
+  }
+}
