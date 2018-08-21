@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-sitmap: https://andrewgard.house/sitemap.xml
+SITEMAP: https://andrewgard.house/sitemap.xml
