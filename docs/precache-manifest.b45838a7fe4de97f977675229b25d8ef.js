@@ -12,16 +12,16 @@ self.__precacheManifest = [
     "url": "https://andrewgard.house/js/chunk-vendors.a1a677ac.js"
   },
   {
-    "revision": "740e72b1d57be1a5f1e9",
-    "url": "https://andrewgard.house/js/app.740e72b1.js"
+    "revision": "4e7d5a6a2a8fb32ec817",
+    "url": "https://andrewgard.house/js/app.4e7d5a6a.js"
   },
   {
-    "revision": "a20ee36af0331df795ed4983d9b38752",
+    "revision": "2d37e5e3aeb4b6e939b33f842a4a1c36",
     "url": "https://andrewgard.house/index.html"
   },
   {
-    "revision": "740e72b1d57be1a5f1e9",
-    "url": "https://andrewgard.house/css/app.edda898e.css"
+    "revision": "4e7d5a6a2a8fb32ec817",
+    "url": "https://andrewgard.house/css/app.1b3ed7ef.css"
   },
   {
     "revision": "5d84ae96bcac00d0ca578f92a4011fd3",
