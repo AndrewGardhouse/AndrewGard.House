@@ -10,7 +10,7 @@
   <a :href="url" target="_blank" rel="noopener noreferrer" v-else>
     <p @mouseover="isHovering = true"
        @mouseout="isHovering = false"
-       class="mt1 mb0 inline-block"
+       class="my1 inline-block"
        :class="{hovering: isHovering}">
       {{ text }}
     </p>

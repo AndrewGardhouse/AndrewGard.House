@@ -23,7 +23,7 @@
         </div>
       </transition>
       <transition name="form-fade" appear>
-        <form class="contact-form" v-on:submit.prevent="submitForm" v-if="!formSubmitted">
+        <form class="contact-form mb-auto" v-on:submit.prevent="submitForm" v-if="!formSubmitted">
           <div class="clearfix">
             <div class="input-field sm-col sm-col-12 md-col-6 px1 mb2">
               <label class="mb1" for="email">Email:</label>
@@ -45,16 +45,6 @@
             <button type="submit" name="submit" class="button mx1">Launch</button>
           </div>
         </form>
-      </transition>
-      <transition name="form-fade" appear>
-        <div class="links mb-auto mt2 flex justify-around" v-if="!formSubmitted">
-          <Link text="GitHub"
-                url="https://github.com/AndrewGardhouse/"
-                :isLocal="false" />
-          <Link text="LinkedIn"
-                url="https://www.linkedin.com/in/andrewgardhouse/"
-                :isLocal="false" />
-        </div>
       </transition>
     </div>
   </div>

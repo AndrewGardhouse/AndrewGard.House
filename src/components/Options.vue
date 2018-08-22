@@ -17,6 +17,16 @@
               url="https://resume.creddle.io/resume/4zagtq816w4"
               :isLocal="false" />
       </li>
+      <li class="option">
+        <Link text="GitHub"
+                    url="https://github.com/AndrewGardhouse/"
+                    :isLocal="false" />
+      </li>
+      <li class="option">
+        <Link text="LinkedIn"
+              url="https://www.linkedin.com/in/andrewgardhouse/"
+              :isLocal="false" />
+      </li>
     </ul>
   </div>
 </template>
