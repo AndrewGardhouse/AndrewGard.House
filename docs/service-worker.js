@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.1/workbox-sw.js");
 
 importScripts(
-  "https://andrewgard.house/precache-manifest.2457f562e8b00c1eb12019918e2aca0a.js"
+  "https://andrewgard.house/precache-manifest.f7e35594c19063f97544e4f73baffb61.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "new-portfolio"});

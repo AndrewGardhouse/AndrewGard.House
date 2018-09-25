@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "https://andrewgard.house/js/app.675a5802.js"
   },
   {
-    "revision": "8e785c635bc371611b62421076e7389b",
+    "revision": "9c89fabf68cd270f8a08acbcb10de319",
     "url": "https://andrewgard.house/index.html"
   },
   {
