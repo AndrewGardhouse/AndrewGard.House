@@ -25,9 +25,9 @@ export default new Router({
       component: Contact
     },
     {
-        path: '*',
-        name: '404',
-        component: Error404
+      path: '*',
+      name: '404',
+      component: Error404
     }
   ]
 })
