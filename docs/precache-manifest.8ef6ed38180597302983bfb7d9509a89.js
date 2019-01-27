@@ -24,6 +24,10 @@ self.__precacheManifest = [
     "url": "https://andrewgard.house/img/open-graph.png"
   },
   {
+    "revision": "25ae5433803545ebbd4e0e1a23c2f4ea",
+    "url": "https://andrewgard.house/google6392760f988e4702.html"
+  },
+  {
     "revision": "901434f8f9a3a112d060",
     "url": "https://andrewgard.house/css/app.7029fef3.css"
   },
