@@ -51,9 +51,9 @@ export default {
   }
   .restart {
     animation-delay: 4s;
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     @media #{$breakpoint-md} {
-      font-size: 2.5rem;
+      font-size: 1.75rem;
     }
     .restart-text {
       animation: pulsate 1.5s infinite;

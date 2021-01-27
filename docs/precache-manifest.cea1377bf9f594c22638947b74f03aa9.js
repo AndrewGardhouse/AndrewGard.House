@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "https://andrewgard.house/js/chunk-vendors.a1a677ac.js"
   },
   {
-    "revision": "901434f8f9a3a112d060",
-    "url": "https://andrewgard.house/js/app.901434f8.js"
+    "revision": "df81074465aaca515159",
+    "url": "https://andrewgard.house/js/app.df810744.js"
   },
   {
-    "revision": "64bfec706bb717b6a4cf1d4795b3eb73",
+    "revision": "fdae0fbd112a96a9d08f695f2c59dd5e",
     "url": "https://andrewgard.house/index.html"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "https://andrewgard.house/google6392760f988e4702.html"
   },
   {
-    "revision": "901434f8f9a3a112d060",
-    "url": "https://andrewgard.house/css/app.7029fef3.css"
+    "revision": "df81074465aaca515159",
+    "url": "https://andrewgard.house/css/app.0b83648a.css"
   },
   {
     "revision": "5d84ae96bcac00d0ca578f92a4011fd3",
