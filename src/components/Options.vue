@@ -13,11 +13,6 @@
               url="/contact" />
       </li>
       <li class="option">
-        <Link text="Resume"
-              url="https://resume.creddle.io/resume/4zagtq816w4"
-              :isLocal="false" />
-      </li>
-      <li class="option">
         <Link text="GitHub"
                     url="https://github.com/AndrewGardhouse/"
                     :isLocal="false" />

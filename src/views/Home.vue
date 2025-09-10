@@ -7,7 +7,7 @@
       </div>
     </transition>
     <transition name="options-fade" appear>
-      <Options></Options>
+      <Options />
     </transition>
   </div>
 </template>

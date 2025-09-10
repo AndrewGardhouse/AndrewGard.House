@@ -68,23 +68,23 @@ export default {
       frontEndSkills: [
         {
           type: 'VueJS',
-          level: 80
+          level: 75
         },
         {
           type: 'Willpower',
-          level: 98
+          level: 100
         },
         {
           type: 'React',
-          level: 40
+          level: 85
         },
         {
           type: 'Perception',
           level: 90
         },
         {
-          type: 'Angular',
-          level: 50
+          type: 'TypeScript',
+          level: 75
         }
       ],
       backEndSkills: [
@@ -93,8 +93,8 @@ export default {
           level: 85
         },
         {
-          type: 'Laravel',
-          level: 30
+          type: 'Python',
+          level: 65
         },
         {
           type: 'Luck',
@@ -106,7 +106,7 @@ export default {
         },
         {
           type: 'Resilience',
-          level: 98
+          level: 100
         }
       ]
     }
