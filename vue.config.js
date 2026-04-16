@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: 'https://andrewgard.house',
+  publicPath: 'https://andrewgard.house',
   outputDir: 'docs',
   pwa: {
     themeColor: '#040029',
