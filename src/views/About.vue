@@ -94,7 +94,7 @@ export default {
         },
         {
           type: 'Python',
-          level: 65
+          level: 75
         },
         {
           type: 'Luck',
